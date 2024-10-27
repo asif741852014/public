@@ -1,0 +1,14 @@
+name: Public Event Logger
+
+on:
+  public
+
+jobs:
+  log_public_event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log Public Event
+        run: |
+          echo "The repository is now public."
+          echo "Repository Name: ${{ github.repository }}"
+          echo "Visibility changed to public on: ${{ github.event.repository.updated_at }}"
